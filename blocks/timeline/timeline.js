@@ -41,7 +41,8 @@ function initTimeReveal() {
 
 export default async function decorate(block) {
   const originalItems = Array.from(block.children);
-
+  console.log('This is the block');
+  console.log(block);
   block.textContent = '';
 
   originalItems.forEach((wrapper, idx) => {
