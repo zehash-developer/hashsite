@@ -5,7 +5,8 @@ function initTimeReveal() {
   const isMobile = window.innerWidth < 768;
 
   if (isMobile) {
-    document.querySelectorAll('.timeline-content.js--fadeInLeft')
+    document
+      .querySelectorAll('.timeline-content.js--fadeInLeft')
       .forEach((el) => el.classList.replace('js--fadeInLeft', 'js--fadeInRight'));
 
     sr.reveal('.js--fadeInRight', {
@@ -30,8 +31,12 @@ function initTimeReveal() {
   }
 
   // extra calls if you truly want them
-  sr.reveal('.js--fadeInLeft', { /* … */ });
-  sr.reveal('.js--fadeInRight', { /* … */ });
+  sr.reveal('.js--fadeInLeft', {
+    /* … */
+  });
+  sr.reveal('.js--fadeInRight', {
+    /* … */
+  });
 }
 
 export default async function decorate(block) {
