@@ -1,0 +1,146 @@
+@use '../../common.scss' as *;
+@use '../../mixins.scss' as mixins;
+
+.carousel {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  @include mixins.flex-center(center, flex-end);
+
+  &__nav {
+    width: 12px;
+    height: 12px;
+    margin: 32px 12px;
+    border-radius: $radius-circle;
+    z-index: $z-index-nav;
+    outline: 6px solid $color-gray;
+    outline-offset: -6px;
+    box-shadow: 0 0 0 2px $color-dark, 0 0 0 0 rgba($color-dark, 0.1);
+    cursor: pointer;
+    appearance: none;
+    backface-visibility: hidden;
+
+    &:checked {
+      animation: check 0.4s linear forwards;
+    }
+  }
+
+  &__inner {
+    @include mixins.absolute-fill;
+    display: flex;
+    flex-flow: row nowrap;
+    @include mixins.transition(left, 0.4s);
+  }
+
+  &__contents {
+    position: relative;
+    height: 100%;
+    padding: $padding-lg;
+    text-align: left;
+    @include mixins.flex-center(flex-start, center);
+    flex: 1;
+    flex-direction: column;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      z-index: 0;
+
+      @include mixins.media-lg {
+        content: none;
+      }
+    }
+
+    .carousel__txtgroup {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      margin: 120px auto 0;
+      max-width: 90%;
+
+      @include mixins.media-md {
+        margin: 250px auto 0;
+        max-width: 90%;
+      }
+
+      @include mixins.media-lg {
+        text-align: left;
+        align-items: flex-start;
+        margin-top: 2%;
+        margin-left:  5%;
+        max-width: 600px;
+      }
+    }
+  }
+
+  &__caption {
+    font-family: $font-family-serif;
+    font-size: $font-lg-mobile;
+    font-weight: $font-weight-medium;
+    text-shadow: 0 1px 1px rgba($color-black, 0.1);
+    text-transform: uppercase;
+    color: $color-white;
+    margin: 0;
+
+    @include mixins.media-lg {
+      font-size: $font-lg;
+      color: $color-black;
+    }
+  }
+
+  &__txt {
+    font-family: $font-family-sans;
+    font-size: $font-sm;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+    margin: 16px 0;
+    max-width: 600px;
+    color: $color-white;
+
+    @include mixins.media-lg {
+      color: $color-black;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    background-color: $color-blue;
+    margin-top: 16px;
+    color: $color-white !important;
+    padding: $padding-sm;
+    border-radius: $radius-full;
+    font-family: $font-family-sans;
+    font-size: $font-sm;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.25px;
+    line-height: 21px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    @include mixins.transition(background-color, $transition-default);
+
+    &:hover {
+      background-color: $color-blue-hover;
+    }
+  }
+}
+
+@keyframes check {
+  50% {
+    outline-color: $color-dark;
+    box-shadow: 0 0 0 12px $color-dark, 0 0 0 36px $color-shadow;
+  }
+
+  100% {
+    outline-color: $color-dark;
+    box-shadow: 0 0 0 0 rgba($color-dark, 0);
+  }
+}

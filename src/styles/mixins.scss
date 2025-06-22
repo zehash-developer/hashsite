@@ -1,0 +1,79 @@
+@use './common.scss' as *;
+
+// Media Queries
+@mixin media-sm {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: 768px) and (max-width: 959px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+// Center a vertical line in timeline
+@mixin center-line($left: 50%) {
+  content: '';
+  z-index: $z-index-line;
+  background: $color-line;
+  width: $timeline-width;
+  height: 95%;
+  position: absolute;
+  left: $left;
+  transform: translateX(-50%);
+}
+
+// Arrow pointer for timeline content
+@mixin arrow($dir: right, $color: $color-bg) {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+
+  @if $dir == right {
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @else if $dir == left {
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent $color transparent transparent;
+  }
+}
+
+// Simple flexbox centering
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Transition helper
+@mixin transition($prop: all, $duration: 0.3s, $ease: ease) {
+  transition: $prop $duration $ease;
+}
+
+// Fill container absolutely
+@mixin absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+// Standard box shadow
+@mixin box-shadow {
+  box-shadow: 0 20px 24px -14px $color-shadow;
+}

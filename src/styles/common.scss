@@ -1,0 +1,58 @@
+// ====================
+// COLORS
+// ====================
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #cccccc;
+$color-dark: #333333;
+$color-blue: #2f49ff;
+$color-blue-hover: #253ecc;
+$color-line: #008000;
+$color-primary: #3f51b5;
+$color-bg: #f5f5f5;
+$color-shadow: rgba(0, 0, 0, 0.30);
+
+// ====================
+// TYPOGRAPHY
+// ====================
+$font-family-serif: 'Source Serif Pro', serif;
+$font-family-sans: 'Muli', sans-serif;
+$font-sm: 14px;
+$font-md: 16px;
+$font-lg: 50px;
+$font-lg-mobile: 40px;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$line-height-base: 21px;
+$letter-spacing-sm: 0.25px;
+
+// ====================
+// BORDER RADIUS
+// ====================
+$radius-full: 9999px;
+$radius-circle: 50%;
+$border-radius-sm: 4px;
+
+// ====================
+// Z-INDEX
+// ====================
+$z-index-default: 1;
+$z-index-img: 3;
+$z-index-line: 2;
+$z-index-nav: 10;
+
+// ====================
+// SPACING & LAYOUT
+// ====================
+$padding-sm: 14px 56px;
+$padding-lg: 32px 64px;
+$transition-default: 0.30s;
+
+// ====================
+// TIMELINE-SPECIFIC
+// ====================
+$timeline-width: 4px;
+$timeline-offset: 50%;
+$timeline-bullet-size: 30px;
+$timeline-arrow-size: 14px;

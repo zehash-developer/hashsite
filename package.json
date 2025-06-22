@@ -8,8 +8,8 @@
     "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
-    "build:scss": "webpack --config webpack.blocks.js",
-    "watch:scss": "webpack --config webpack.blocks.js --watch"
+    "build": "webpack --config webpack.blocks.scss.js",
+    "watch": "webpack --config webpack.blocks.scss.js --watch"
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,20 @@
   },
   "homepage": "https://github.com/adobe/aem-boilerplate#readme",
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
     "browser-sync": "^3.0.4",
     "css-loader": "^7.1.2",
     "glob": "^11.0.3",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
+    "terser-webpack-plugin": "^5.3.14",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "scrollreveal": "^4.0.9"
   }
 }

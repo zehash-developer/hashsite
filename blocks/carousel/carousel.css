@@ -1,1 +1,148 @@
+/*!***************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./src/styles/blocks/carousel/carousel.scss ***!
+  \***************************************************************************************************************************************************************/
+.carousel {
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.carousel__nav {
+  width: 12px;
+  height: 12px;
+  margin: 32px 12px;
+  border-radius: 50%;
+  z-index: 10;
+  outline: 6px solid #cccccc;
+  outline-offset: -6px;
+  box-shadow: 0 0 0 2px #333333, 0 0 0 0 rgba(51, 51, 51, 0.1);
+  cursor: pointer;
+  appearance: none;
+  backface-visibility: hidden;
+}
+.carousel__nav:checked {
+  animation: check 0.4s linear forwards;
+}
+.carousel__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  transition: left 0.4s ease;
+}
+.carousel__contents {
+  position: relative;
+  height: 100%;
+  padding: 32px 64px;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.carousel__contents::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 0;
+}
+@media (min-width: 960px) {
+  .carousel__contents::before {
+    content: none;
+  }
+}
+.carousel__contents .carousel__txtgroup {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 150px auto 0;
+  max-width: 90%;
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  .carousel__contents .carousel__txtgroup {
+    margin: 250px auto 0;
+    max-width: 90%;
+  }
+}
+@media (min-width: 960px) {
+  .carousel__contents .carousel__txtgroup {
+    text-align: left;
+    align-items: flex-start;
+    margin-top: 2%;
+    margin-left: 5%;
+    max-width: 600px;
+  }
+}
+.carousel__caption {
+  font-family: "Source Serif Pro", serif;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+@media (min-width: 960px) {
+  .carousel__caption {
+    font-size: 50px;
+    color: #000000;
+  }
+}
+.carousel__txt {
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin: 16px 0;
+  max-width: 600px;
+  color: #ffffff;
+}
+@media (min-width: 960px) {
+  .carousel__txt {
+    color: #000000;
+  }
+}
+.carousel__link {
+  display: inline-block;
+  background-color: #2f49ff;
+  margin-top: 16px;
+  color: #ffffff !important;
+  padding: 14px 56px;
+  border-radius: 9999px;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  line-height: 21px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+.carousel__link:hover {
+  background-color: #253ecc;
+}
 
+@keyframes check {
+  50% {
+    outline-color: #333333;
+    box-shadow: 0 0 0 12px #333333, 0 0 0 36px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    outline-color: #333333;
+    box-shadow: 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
